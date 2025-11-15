@@ -22,3 +22,4 @@ link_directories(${CMAKE_BINARY_DIR}/${LIBLINKEDLIST_PATH})
 
 add_library(stack SHARED ${SRC_FILES})
 target_link_libraries(stack PRIVATE linkedlist)
+target_compile_definitions(linkedlist PRIVATE LINKEDLIST_EXPORTS)
