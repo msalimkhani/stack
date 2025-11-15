@@ -15,11 +15,12 @@ set(LIBLINKEDLIST_INCLUDE "linkedlist/include")
 # Add include directory
 include_directories(${LIBLINKEDLIST_INCLUDE} ${CMAKE_SOURCE_DIR}/include)
 
- file(GLOB SRC_FILES ${CMAKE_SOURCE_DIR}/src/*.cpp)
-
 # Tell the linker where the .so file is
 link_directories(${CMAKE_BINARY_DIR}/${LIBLINKEDLIST_PATH})
 
-add_library(stack SHARED ${SRC_FILES})
-target_link_libraries(stack PRIVATE linkedlist)
-target_compile_definitions(linkedlist PRIVATE LINKEDLIST_EXPORTS)
+add_library(stack INTERFACE)
+
+target_include_directories(stack INTERFACE
+    ${CMAKE_CURRENT_SOURCE_DIR}/include
+        )
+target_link_libraries(stack INTERFACE linkedlist)

@@ -19,4 +19,4 @@ link_directories(${LIBSTACK_PATH})
 
 add_executable(demo ${SRC_FILES})
 
-target_link_libraries(demo PRIVATE stack)
+target_link_libraries(demo INTERFACE stack)

@@ -8,7 +8,8 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 # Add include directory
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
 
-# Collect all source files
-file(GLOB SRC_FILES ${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp)
-# Create a shared library (.so)
-add_library(linkedlist SHARED ${SRC_FILES})
+add_library(linkedlist INTERFACE)
+
+target_include_directories(linkedlist INTERFACE
+    ${CMAKE_CURRENT_SOURCE_DIR}/include
+    )
