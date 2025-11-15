@@ -21,6 +21,6 @@ class Stack{
 		}
 };
 
-#include "../src/Stack.tpp"
+#include "Stack.tpp"
 
 #endif
