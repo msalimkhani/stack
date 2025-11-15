@@ -1,5 +1,3 @@
-#include <iostream>
-#include <ostream>
 template <typename T>
 
 LinkedList<T>::LinkedList() {
