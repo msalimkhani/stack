@@ -67,7 +67,7 @@ template <typename T> void LinkedList<T>::insertAt(int index, T data) {
 }
 template <typename T> void LinkedList<T>::removeAt(int index) {
   Node<T> *p = head;
-  if(index == 0){
+  if (index == 0) {
     this->head = p->next;
     delete p;
   }
@@ -79,12 +79,9 @@ template <typename T> void LinkedList<T>::removeAt(int index) {
   this->count--;
 }
 
-template <typename T> int LinkedList<T>::getSize(){
-  return this->count;
-}
+template <typename T> int LinkedList<T>::getSize() { return this->count; }
 
-template<typename T>
-void LinkedList<T>::insertToBegining(T item){
+template <typename T> void LinkedList<T>::insertToBegining(T item) {
   Node<T> *n = new Node<T>();
   n->data = item;
   n->next = this->head;

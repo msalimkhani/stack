@@ -1,11 +1,16 @@
 #pragma once
 #include "Node.h"
 
-template <typename T>
-
-class LinkedList
-
-{
+#ifdef _WIN32
+#ifdef LINKEDLIST_EXPORTS
+#define LINKEDLIST_API __declspec(dllexport)
+#else
+#define LINKEDLIST_API __declspec(dllimport)
+#endif
+#else
+#define LINKEDLIST_API
+#endif
+template <typename T> class LINKEDLIST_API LinkedList {
 private:
   Node<T> *head;
   int count = 0;
