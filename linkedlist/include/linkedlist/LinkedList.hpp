@@ -1,5 +1,6 @@
 #pragma once
-#include "Node.h"
+#include <linkedlist/Node.hpp>
+#include <tools/Logger.hpp>
 
 template <typename T> class LinkedList {
 private:

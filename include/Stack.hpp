@@ -2,7 +2,7 @@
 #ifndef __STACK_HPP__
 #define __STACK_HPP__
 
-#include <LinkedList.hpp>
+#include <linkedlist/LinkedList.hpp>
 
 template <typename T>
 

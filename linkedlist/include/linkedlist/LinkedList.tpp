@@ -6,8 +6,12 @@ LinkedList<T>::LinkedList() {
 }
 
 template <typename T> LinkedList<T>::~LinkedList() {
-  if (head != nullptr) {
-    this->freeMem(this->head);
+  try {
+    if (head != nullptr) {
+      this->freeMem(this->head);
+    }
+  } catch (std::exception ex) {
+    
   }
 }
 
