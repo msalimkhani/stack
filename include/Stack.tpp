@@ -1,17 +1,17 @@
 template <typename T>
 
-Stack<T>::Stack() {
+DataStructures::Stack<T>::Stack() {
   this->list = new LinkedList<T>();
 }
 
-template <typename T> Stack<T>::~Stack() { delete this->list; }
+template <typename T> DataStructures::Stack<T>::~Stack() { delete this->list; }
 
 template <typename T>
 
-T Stack<T>::top() {
+T DataStructures::Stack<T>::top() {
   return this->list->getAt(0);
 }
-template <typename T> T Stack<T>::pop() {
+template <typename T> T DataStructures::Stack<T>::pop() {
   T top = this->top();
   this->list->removeAt(0);
   return top;
@@ -19,6 +19,6 @@ template <typename T> T Stack<T>::pop() {
 
 template <typename T>
 
-void Stack<T>::push(T item) {
+void DataStructures::Stack<T>::push(T item) {
   this->list->insertToBegining(item);
 }

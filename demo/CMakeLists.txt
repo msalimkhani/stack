@@ -1,5 +1,3 @@
-cmake_minimum_required(VERSION 3.10)
-
 project(demo)
 
 # Set C++ standard
@@ -15,6 +13,6 @@ file(GLOB SRC_FILES ${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp)
 
 add_executable(demo ${SRC_FILES})
 
-target_link_libraries(demo INTERFACE stack)
-
-target_link_libraries(demo INTERFACE tools)
+# Link against the top-level interface target so its usage requirements
+# (include directories from linkedlist -> tools) propagate to this exe.
+target_link_libraries(demo PRIVATE stack)

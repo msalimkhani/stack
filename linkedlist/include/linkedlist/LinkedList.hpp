@@ -1,29 +1,48 @@
 #pragma once
+#ifndef __LINKEDLIST_HPP__
+#define __LINKEDLIST_HPP__
+
 #include <linkedlist/Node.hpp>
 #include <tools/Logger.hpp>
 
-template <typename T> class LinkedList {
-private:
-  Node<T> *head;
-  int count = 0;
-  void freeMem(Node<T> *p);
-  Node<T> *getLastNode(Node<T> *p);
-  Node<T> *getAtPrivate(int index);
+using namespace Tools;
 
-public:
-  LinkedList();
-  ~LinkedList();
+namespace DataStructures
+{
+  template <typename T>
+  class LinkedList
+  {
+  private:
+    Node<T> *head;
+    void freeMem(Node<T> *p);
+    Node<T> *getLastNode(Node<T> *p);
+    Node<T> *getAtPrivate(int index);
 
-  int getSize();
-  void add(T data);
+  public:
+    LinkedList();
+    ~LinkedList();
 
-  T getAt(int index);
+    int getSize();
+    void add(T data);
 
-  void insertAt(int index, T data);
+    T getAt(int index);
 
-  void insertToBegining(T data);
+    void insertAt(int index, T data);
 
-  void removeAt(int index);
-};
+    void insertToBegining(T data);
+
+    void removeAt(int index);
+
+    void print();
+
+    bool isEmpty();
+
+    void clear();
+
+    T* toArray();
+  };
 
 #include "LinkedList.tpp"
+} // namespace DataStructures
+
+#endif

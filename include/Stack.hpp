@@ -4,7 +4,9 @@
 
 #include <linkedlist/LinkedList.hpp>
 
-template <typename T>
+namespace DataStructures
+{
+	template <typename T>
 
 class Stack{
 	private:
@@ -15,12 +17,16 @@ class Stack{
 		T top();
 		T pop();
 		void push(T item);
-
+		void print(){
+			this->list->print();
+		}
 		int getSize(){
 			return this->list->getSize();
 		}
 };
 
 #include "Stack.tpp"
+} // namespace DataStructures
+
 
 #endif
